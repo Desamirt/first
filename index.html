@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #login-form {
+        margin: 100px auto;
+        width: 300px;
+    }
+</style>
+</head>
+<body>
+
+<div id="login-form">
+    <h2>Login</h2>
+    <form onsubmit="return validateForm()">
+        <input type="text" id="username" placeholder="Username" required><br><br>
+        <input type="password" id="password" placeholder="Password" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+</div>
+
+<script>
+    function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        // Check if username and password are correct
+        if (username === "amirt" && password === "khalili1385") {
+            document.getElementById("message").innerText = "Correct";
+        } else {
+            document.getElementById("message").innerText = "Wrong username or password";
+            // Prevent form submission
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>
